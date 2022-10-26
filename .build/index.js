@@ -4,16 +4,6 @@ const resolve = path.resolve
 
 copyFolderRecursiveSync(resolve(__dirname, '../src/renderer/'), resolve(__dirname, '../build/'))
 
-function copyFileSync(source, target) {
-  let targetFile = target
-  if (fs.existsSync(target)) {
-    if (fs.lstatSync(target).isDirectory()) {
-      targetFile = path.join(target, path.basename(source))
-    }
-  }
-  fs.writeFileSync(targetFile, fs.readFileSync(source))
-}
-
 function copyFolderRecursiveSync(source, target) {
   const targetFolder = path.join(target, path.basename(source))
   if (!fs.existsSync(targetFolder)) {
@@ -31,4 +21,14 @@ function copyFolderRecursiveSync(source, target) {
       }
     })
   }
+}
+
+function copyFileSync(source, target) {
+  let targetFile = target
+  if (fs.existsSync(target)) {
+    if (fs.lstatSync(target).isDirectory()) {
+      targetFile = path.join(target, path.basename(source))
+    }
+  }
+  fs.writeFileSync(targetFile, fs.readFileSync(source))
 }
