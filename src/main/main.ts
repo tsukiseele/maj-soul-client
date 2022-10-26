@@ -5,7 +5,7 @@ import * as path from 'path'
 //   electron: path.join(__dirname, '../node_modules', '../.bin', '../electron')
 // });
 
-const electronReload = require('electron-reload')
+// const electronReload = require('electron-reload')
 function createWindow() {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
@@ -21,7 +21,7 @@ function createWindow() {
   mainWindow.setAspectRatio(16 / 9)
 
   // and load the index.html of the app.
-  mainWindow.loadFile(path.join(__dirname, '../src/renderer/index.html'))
+  mainWindow.loadFile(path.join(__dirname, '../renderer/index.html'))
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools()
