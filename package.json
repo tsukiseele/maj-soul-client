@@ -7,9 +7,9 @@
   "author": "TsukiSeele",
   "scripts": {
     "watch": "tsc -w",
-    "start": "tsc && node ./.build/index.js && electron ./build/main/main.js",
-    "build": "tsc && node ./.build/index.js && electron-builder",
-    "pack": " tsc && node ./.build/index.js && electron-builder --dir"
+    "start": "tsc && node ./scripts/index.js && electron ./build/main/main.js",
+    "build": "tsc && node ./scripts/index.js && electron-builder",
+    "pack": "tsc && node ./scripts/index.js && electron-builder --dir"
   },
   "devDependencies": {
     "electron": "~17.4.11",
